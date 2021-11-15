@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React, { useEffect, useState } from "react";
+import { Drawer, Login } from "./Components";
+import { BrowserRouter as Router, Switch } from "react-router-dom";
+import { IsUserRedirect, ProtectedRoute } from './routes/Routes';
+import { useLocalContext } from "./context/context"
 function App() {
+  const {loggedInMail } = useLocalContext();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <IsUserRedirect
+        user ={loggedInMail}
+        loggedInPath='/'
+        path='/signin'exact>
+          <Login/>
+        </IsUserRedirect>
+
+        <ProtectedRoute user={loggedInMail} path="/" exact>
+          <Drawer />
+        </ProtectedRoute>
+      </Switch>
+    </Router>
   );
 }
 
