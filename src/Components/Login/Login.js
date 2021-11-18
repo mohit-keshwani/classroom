@@ -9,7 +9,7 @@ const Login = () => {
   console.log(loggedInUser);
   return (
     <div className="login">
-      <img className="login__logo" src={logo} alt="Classroom" />
+      <img className="login__logo" src="https://pbs.twimg.com/media/EyjQfGYU8AEs0xE?format=jpg&name=large" alt="Classroom" />
 
       <Button variant="contained" color="default" onClick={() => login()}>
         Login

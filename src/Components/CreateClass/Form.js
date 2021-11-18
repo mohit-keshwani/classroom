@@ -10,7 +10,7 @@ const Form = () => {
   const [Room, setRoom] = useState("");
   const [Subject, setSubject] = useState("");
 
-  /*const { loggedInMail, setCreateClassDialog } = useLocalContext();
+  const { loggedInMail, setCreateClassDialog } = useLocalContext();
 
   const addClass = (e) => {
     e.preventDefault();
@@ -30,7 +30,7 @@ const Form = () => {
       .then(() => {
         setCreateClassDialog(false);
       });
-  };*/
+  };
   return (
     <div className="form">
       <p className="class__title">Create Class</p>
@@ -70,7 +70,7 @@ const Form = () => {
         />
       </div>
       <DialogActions>
-        <Button color="primary">
+        <Button onClick={addClass} color="primary">
           Create
         </Button>
       </DialogActions>

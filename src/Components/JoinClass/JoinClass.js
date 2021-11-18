@@ -11,6 +11,46 @@ const Transition = React.forwardRef(function Transition(props, ref){
 
 const JoinClass = () => {
     const {joinClassDialog, setJoinClassDialog, loggedInUser} = useLocalContext();
+    const [classCode, setClassCode] = useState("");
+  const [email, setemail] = useState("");
+  const [error, setError] = useState();
+  const [joinedData, setJoinedData] = useState();
+  const [classExists, setClassExists] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    db.collection("CreatedClasses")
+      .doc(email)
+      .collection("classes")
+      .doc(classCode)
+      .get()
+      .then((doc) => {
+        if (doc.exists && doc.owner !== loggedInUser.email) {
+          setClassExists(true);
+          setJoinedData(doc.data()); 
+          setError(false);
+        } else {
+          setError(true);
+          setClassExists(false);
+          return;
+        }
+      });
+
+    if (classExists === true) {
+      db.collection("JoinedClasses")
+        .doc(loggedInUser.email)
+        .collection("classes")
+        .doc(classCode)
+        .set({
+          joinedData,
+        })
+        .then(() => {
+          setJoinClassDialog(false);
+        });
+    }
+  };
+
     return(
         <div>
             <Dialog
@@ -32,6 +72,7 @@ const JoinClass = () => {
               className="joinClass__btn"
               variant="contained"
               color="primary"
+              onClick={handleSubmit}
             >
               Join
             </Button>
@@ -75,11 +116,17 @@ const JoinClass = () => {
                 id="outlined-basic"
                 label="Class Code"
                 variant="outlined"
+                value={classCode}
+                onChange={(e) => setClassCode(e.target.value)}
+                error={error}
+                helperText={error && "No class was found"}
               />
               <TextField
                 id="outlined-basic"
                 label="Owner's email"
                 variant="outlined"
+                value={email}
+                onChange={(e) => setemail(e.target.value)}
               />
             </div>
           </div>

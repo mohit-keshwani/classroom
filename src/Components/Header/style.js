@@ -36,6 +36,5 @@ export const useStyles = makeStyles((theme) => ({
     marginRight: "15px",
     color: "#5f6368",
     cursor: "pointer",
-    alignItems: "normal",
   },
 }));
