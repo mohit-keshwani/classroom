@@ -2,6 +2,9 @@ import { Avatar } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
 import db from "../../lib/firebase";
 import "./style.css";
+import { Link } from "react-router-dom";
+import PdfIcon from "../../Assets/pdf-icon.png";
+
 const Announcment = ({ classData }) => {
   const [announcment, setAnnouncment] = useState([]);
 
@@ -28,7 +31,9 @@ const Announcment = ({ classData }) => {
               <div>{item.sender}</div>
             </div>
             <p className="amt__txt">{item.text}</p>
-            <img className="amt__img" src={item.imageUrl} alt={item.text} />
+            <Link to = {item.imageUrl}>
+               <img className="amt__img" src={PdfIcon} alt={item.text} />
+            </Link>
           </div>
         </div>
       ))}
