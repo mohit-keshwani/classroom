@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState, useContext } from 'react';
-import { auth, provider } from "../lib/firebase";
+import { auth, provider, providerGit, providerMicrosoft } from "../lib/firebase";
 const AddContext = createContext();
 
 export function useLocalContext(){
@@ -9,10 +9,14 @@ export function useLocalContext(){
 export function ContextProvider({ children }){
     const [createClassDialog, setCreateClassDialog] = useState(false);
     const [joinClassDialog, setJoinClassDialog] = useState(false);
+    const [todoClassDialog, setTodoClassDialog] = useState(false);
     const [loggedInUser, setLoggedInUser] = useState(null);
     const [loggedInMail, setLoggedInMail] = useState(null);
    
     const login = () => auth.signInWithPopup(provider);
+    const loginGit = () => auth.signInWithPopup(providerGit);
+    //const loginEmail = () => auth.signInWithEmailAndPassword(providerEmail);
+    const loginMicrosoft = () => auth.signInWithPopup(providerMicrosoft);
 
     const logout = () => auth.signOut();
 
@@ -34,7 +38,11 @@ export function ContextProvider({ children }){
       setCreateClassDialog,
       joinClassDialog,
       setJoinClassDialog,
+      todoClassDialog, 
+      setTodoClassDialog,
       login,
+      loginGit,
+      loginMicrosoft,
       logout,
       loggedInMail,
       loggedInUser,

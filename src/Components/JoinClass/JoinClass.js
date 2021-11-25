@@ -1,3 +1,6 @@
+//the header component contains a plus menu icon which has the functionality of 
+//joining the class created by the creator
+
 import React, { useState } from "react";
 import { Avatar, Button, Dialog, Slide, TextField } from "@material-ui/core";
 import { useLocalContext } from "../../context/context";
@@ -9,6 +12,10 @@ const Transition = React.forwardRef(function Transition(props, ref){
     return <Slide directon="up" ref={ref} {...props} />
 });
 
+//this function opens up the dialog box with some information about the loggedin person
+//the dialog box takes 2 inputs, class code and class creator's email to join the class
+//
+
 const JoinClass = () => {
     const {joinClassDialog, setJoinClassDialog, loggedInUser} = useLocalContext();
     const [classCode, setClassCode] = useState("");
@@ -16,7 +23,7 @@ const JoinClass = () => {
   const [error, setError] = useState();
   const [joinedData, setJoinedData] = useState();
   const [classExists, setClassExists] = useState(false);
-
+  
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -84,7 +91,7 @@ const JoinClass = () => {
             <div className="joinClass__loginInfo">
               <div className="joinClass__classLeft">
                 <Avatar src={loggedInUser?.photoURL} />
-                <div className="joinClass__loginText">
+                <div className="joinClaoginss__lText">
                   <div className="joinClass__loginName">
                     {loggedInUser?.displayName}
                   </div>

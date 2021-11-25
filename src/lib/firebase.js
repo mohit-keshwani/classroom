@@ -1,5 +1,6 @@
 import firebase from 'firebase'
 import 'firebase/firestore'
+//import { OAuthProvider } from "firebase/auth";
 
 const firebaseConfig = {
     apiKey: "AIzaSyBfmLbgHQ_0Fmt9pWB5oPb7OWEIGVMoYK0",
@@ -15,8 +16,12 @@ const firebaseConfig = {
 
   const db = firebase.firestore();
   const auth = firebase.auth();
+  const database = firebase.database();
   const provider = new firebase.auth.GoogleAuthProvider();
+  const providerGit = new firebase.auth.GithubAuthProvider();
+  //const providerEmail = new firebase.auth.createUserWithEmailAndPassword();
+  const providerMicrosoft = new firebase.auth.OAuthProvider('microsoft.com');
   const storage = firebase.storage();
   
-  export { auth, provider, storage };
+  export { auth, database, provider, providerGit, providerMicrosoft, storage };
   export default db;

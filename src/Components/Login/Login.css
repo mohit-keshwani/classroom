@@ -37,6 +37,7 @@
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
+
 .container .box {
   position: absolute;
   left: 0;
@@ -45,6 +46,7 @@
   height: 100%;
   overflow: hidden;
 }
+
 .container .box:before, .container .box:after {
   content: " ";
   position: absolute;
@@ -119,6 +121,7 @@
   font-size: 20px;
   margin: 20px;
 }
+
 .container .container-forms .container-info .info-item .btn {
   background-color: transparent;
   border: 1px solid #fff;
@@ -187,3 +190,50 @@
   height: 0%;
   opacity: 0;
 }
+
+.btn-google:hover {
+    background: #b22222;
+    color: #fff;
+}
+
+.btn-facebook:hover {
+    background: #2b4db1;
+    color: #fff;
+}
+
+.btn-twitter:hover {
+    background: #007bb6;
+    color: #fff;
+}
+
+.btn-microsoft:hover {
+    background: #00618E;
+    color: #fff;
+}
+
+.btn-facebook {
+    background: #305c99;
+    color: #fff;
+}
+
+.btn-twitter {
+    background: #00cdff;
+    color: #fff;
+}
+
+.btn-google {
+    background: #d24228;
+    color: #fff;
+}
+
+.btn-linkedin {
+    background: #007bb6;
+    color: #fff;
+}
+
+.btn-microsoft {
+    background: #007bb6;
+    color: #fff;
+}
+
+

@@ -1,3 +1,7 @@
+//On successfull login the person will get redirected to an empty page with just a header
+//The following function will create a header at the top of the page with a '+' icon
+//to join, create class or todo
+
 import React from "react";
 import { useStyles } from "./style";
 import {
@@ -8,18 +12,22 @@ import {
   Menu,
   MenuItem,
 } from "@material-ui/core";
-import { Add, Apps } from "@material-ui/icons";
+import { Add } from "@material-ui/icons";
 import { useLocalContext } from "../../context/context";
 import logo from "../../Assets/logo4.png";
-import { CreateClass, JoinClass } from "..";
+import { CreateClass, JoinClass, Todo } from "..";
+
+//this function handles the outlook of the header component of the page
+//and renders the drawer and plus menu icon for joining and creating the class and todo
 
 const Header = ({ children }) => {
   const classes = useStyles();
-  const { setCreateClassDialog, setJoinClassDialog, loggedInUser, logout } = useLocalContext();
+  const { setCreateClassDialog, setJoinClassDialog, setTodoClassDialog, loggedInUser, logout } = useLocalContext();
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const handleClick = (event) => setAnchorEl(event.currentTarget);
   const handleClose = () => setAnchorEl(null);
+
 
   const handleCreate = () => {
     handleClose();
@@ -30,6 +38,11 @@ const Header = ({ children }) => {
     handleClose();
     setJoinClassDialog(true);
   };
+
+  const handletodo = () => {
+    handleClose();
+    setTodoClassDialog(true);
+  }
 
   return (
     <div className={classes.root}>
@@ -54,6 +67,7 @@ const Header = ({ children }) => {
             >
               <MenuItem onClick={handleJoin}>Join Class</MenuItem>
               <MenuItem onClick={handleCreate}>Create Class</MenuItem>
+              <MenuItem onClick={handletodo}> Todo </MenuItem>
             </Menu>
             <div>
               <Avatar
@@ -65,6 +79,7 @@ const Header = ({ children }) => {
           </div>
         </Toolbar>
       </AppBar>
+      <Todo />
       <CreateClass />
       <JoinClass />
     </div>

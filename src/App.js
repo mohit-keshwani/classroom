@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Drawer, JoinedClasses, Login, Main } from "./components";
+import { Drawer, JoinedClasses, Loginn, Main } from "./components";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { IsUserRedirect, ProtectedRoute } from "./routes/Routes";
 import { useLocalContext } from "./context/context";
@@ -56,7 +56,7 @@ function App() {
         user ={loggedInMail}
         loggedInPath='/'
         path='/signin'exact>
-          <Login/>
+          <Loginn/>
         </IsUserRedirect>
 
         <ProtectedRoute user={loggedInMail} path="/" exact>
