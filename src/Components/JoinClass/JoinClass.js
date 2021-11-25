@@ -13,8 +13,9 @@ const Transition = React.forwardRef(function Transition(props, ref){
 });
 
 //this function opens up the dialog box with some information about the loggedin person
-//the dialog box takes 2 inputs, class code and class creator's email to join the class
-//
+//the dialog box take 2 inputs, class code and class creator's email to join the class and then render the inputs
+//the firebase then store the email of the new person who joined the class 
+//the class is only accessible when the person is loggedIn
 
 const JoinClass = () => {
     const {joinClassDialog, setJoinClassDialog, loggedInUser} = useLocalContext();

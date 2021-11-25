@@ -1,3 +1,6 @@
+//the main component handles the whole interface of the joined class 
+//here the student can submit/view the assignments/materials posted by the creator
+
 import { Avatar, Button, TextField } from "@material-ui/core";
 import React, { useState } from "react";
 import db, { storage } from "../../lib/firebase";
@@ -5,6 +8,9 @@ import "./style.css";
 import firebase from "firebase";
 import { useLocalContext } from "../../context/context";
 import { Announcment } from "..";
+
+//the main function provides the base for announcement component
+//here the 
 const Main = ({ classData }) => {
   const { loggedInMail } = useLocalContext();
 
@@ -17,7 +23,7 @@ const Main = ({ classData }) => {
       setImage(e.target.files[0]);
     }
   };
-
+  //upload the documents in the firebase storage system 
   const handleUpload = () => {
     const uploadImage = storage.ref(`images/${image.name}`).put(image);
 
@@ -39,6 +45,8 @@ const Main = ({ classData }) => {
         });
     });
   };
+
+  //the function returns the template of class page 
   return (
     <div className="main">
       <div className="main__wrapper">

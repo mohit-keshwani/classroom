@@ -1,3 +1,8 @@
+//After the user has added a reminder, in case the user forgets to finish the task this todo functionality comes in handy 
+//when the user needs to put a reminder in the todo dialog box and its features to update or delete 
+//the task yet to be done, and the task finished, respectively.
+
+
 import {
     ListItem,
     ListItemAvatar,
@@ -11,7 +16,7 @@ import {
   import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
   
   import { makeStyles } from "@material-ui/core/styles";
-  
+
   const useStyles = makeStyles((theme) => ({
     paper: {
       position: "absolute",
@@ -23,11 +28,13 @@ import {
     },
   }));
   
+  //the update function updates the task whenever the user edits their old task
   function Update(props) {
     const classes = useStyles();
     const [open, setOpen] = useState(false);
     const [input, setInput] = useState("");
   
+    //this updateTodo function will update the task in firebase in realtime 
     const updateTodo = () => {
       if (props.firebaseUser) {
         db.collection(props.firebaseUser).doc(props.passedTodo.id).set(
@@ -40,9 +47,8 @@ import {
       }
     };
   
-    const handleOpen = () => {
-      setOpen(true);
-    };
+
+    //the delete event will be triggered when the user finishes his task
     const deleteMe = (event) => {
       if (props.firebaseUser) {
         db.collection(props.firebaseUser).doc(props.passedTodo.id).delete();

@@ -1,3 +1,8 @@
+//This component is specially for submission process for both creator and students
+//the creator or student can post the document in any format(doc,pdf,jpg)
+//the document is accessible to both creator and the students in the group
+//the document will then be uploaded to firebase
+
 import { Avatar } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
 import db from "../../lib/firebase";
@@ -5,6 +10,8 @@ import "./style.css";
 import { Link } from "react-router-dom";
 import PdfIcon from "../../Assets/pdf-icon.png";
 
+//here classdata i.e the document is passed to the function to upload it on firebase
+//then it is posted in the class which can be accessed by clicking on the pdf icon
 const Announcment = ({ classData }) => {
   const [announcment, setAnnouncment] = useState([]);
 

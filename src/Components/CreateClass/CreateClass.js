@@ -1,10 +1,17 @@
-//importing all the necessary libraries
+//the create class component allows the creator to create the class on thier own
+//the creator can set the title, section, subject, and the number of students that can joined the class
+//
+//every class has its own class code that the creator can share with its student, along with their email-id
+
+
 import React, { useState } from 'react';
 import { useLocalContext } from "../../context/context";
 import { Button, Checkbox, Dialog, DialogContent, DialogActions } from "@material-ui/core";
-import logo from "../../Assets/logo4.png"
 import Form from "./Form";
 import './style.css'
+
+//the create class function first opens a small dialog box that allows the user to accept the terms and conditions
+//post that the user can create any class
 
 const CreateClass = () => {
     const { createClassDialog, setCreateClassDialog } = useLocalContext();

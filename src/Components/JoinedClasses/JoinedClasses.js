@@ -1,8 +1,17 @@
+//at the home page all the joined classes of the loggedIn users are shown
+//
+
 import { Avatar } from "@material-ui/core";
 import { FolderOpen, PermContactCalendar } from "@material-ui/icons";
 import React from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
+
+
+//the joined class function show the joined class as cards at the home page
+//the card consist of title, name of the class and class owner's
+//onclicking the card user will be redirected to the class page
+
 const JoinedClasses = ({ classData }) => {
   return (
     <li className="joined__list">

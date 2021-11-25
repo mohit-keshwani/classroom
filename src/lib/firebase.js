@@ -1,6 +1,7 @@
+//Initialize firebase configurations for login/signup authentication and storage facilities
+
 import firebase from 'firebase'
 import 'firebase/firestore'
-//import { OAuthProvider } from "firebase/auth";
 
 const firebaseConfig = {
     apiKey: "AIzaSyBfmLbgHQ_0Fmt9pWB5oPb7OWEIGVMoYK0",

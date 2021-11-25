@@ -19,7 +19,7 @@
     overflow: hidden;
     position: relative;
     text-align: center;
-    width: 45rem;
+    width: 25rem;
     background-color: #fff;
     border: 0.0625rem solid #dadce0;
     -webkit-border-radius: 0.5rem;
@@ -31,10 +31,10 @@
     position: absolute;
     top: 0;
     width: 100%;
-    background-color: #174ea6;
+    background-color: #13011d;
   }
   .joined__image {
-    background-image: url(https://microsoft.acehacker.com/fte2021/img/demo-content/images/school.png);
+    background-image: url(https://otus.com/wp-content/uploads/2020/09/5.png);
     height: 100%;
     left: 0;
     position: absolute;
@@ -58,20 +58,22 @@
     position: relative;
   }
   .joined__title {
-    color: white;
+    color: black;
     font-family: "Roboto";
     text-decoration: none;
+    
   }
   .joined__title h2 {
-    font-weight: 400;
+    font-weight: bold;
   }
   .joined__title h2:hover {
     text-decoration: underline;
   }
   .joined__owner {
-    color: white;
-    font-weight: 400 !important;
-    font-size: 15px !important;
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+    text-align: left;
   }
   .joined__avatar {
     float: right;
@@ -83,11 +85,11 @@
   }
   .joined__bottom {
     margin-top: 10%;
-    display: flex-end;
+    display: flex;
     color: #5f6368;
     justify-content: flex-end;
     border-top: 0.2px solid #e0e0e0;
-    padding: 10px;
+    padding: 7.5px;
   }
   .joined__bottom > * {
     margin-right: 20px;

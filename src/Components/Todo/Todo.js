@@ -1,26 +1,30 @@
+//todo feature helps the students to set their daily task and reminders
+//easy to use ui enables them to use CRUD operations efficiently
+//the task gets uploaded, updated, and deleted on the firebase storage in real-time 
+//data privacy is utmost important, so the task are visible only to the associated loggedin user
+
 import React, { useEffect, useState } from "react";
-import { Box, Button, FormControl, Input, InputLabel, Avatar, Dialog, Slide, TextField } from "@material-ui/core";
+import { Box, Button, FormControl, Input, InputLabel, Dialog, Slide } from "@material-ui/core";
 import "./Todo.css";
 import db from "../../lib/firebase";
 import firebase from "firebase";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useLocalContext } from "../../context/context";
-import { Update } from "@material-ui/icons";
 import { Close } from "@material-ui/icons";
 import { UpdateTodo } from ".."
 
+//transition function for the dialog box
 const Transition = React.forwardRef(function Transition(props, ref){
     return <Slide directon="up" ref={ref} {...props} />
 });
 
+
+//App function will render the CRUD operations of the user using a simple Todo UI
 const App = () => {
-    const {todoClassDialog, setTodoClassDialog, loggedInUser, login, loggedInMail} = useLocalContext();
+    const {todoClassDialog, setTodoClassDialog, loggedInUser, loggedInMail} = useLocalContext();
   const [todos, setTodos] = useState([]);
   const [input, setInput] = useState("");
-
-  //const { user, isAuthenticated, logout, loginWithRedirect } = useAuth0();
-  //const isUser = isAuthenticated && user;
-  //const firebaseUser = isUser;
+ 
+  //this event will be triggered whenever the user will create new task
   useEffect(() => {
     if (loggedInMail) {
       db.collection(loggedInMail)
@@ -32,11 +36,10 @@ const App = () => {
         });
     }
   }, [loggedInMail]);
-  //const timestamp = firebase.firestore.FieldValue.serverTimestamp();
 
-  // console.log(timestamp);
 
   console.log("isuser", loggedInMail);
+
   const addTodo = (event) => {
     event.preventDefault();
     if (loggedInUser.email) {
@@ -49,12 +52,13 @@ const App = () => {
     }
   };
 
-  // const timestamp = new Date(timestamp?.toDate()).toUTCString();
+  
   return (
-        <div className="Appp">
+        <div className="body">
         <Dialog
-                fullScreen
+                SimpleDialog
                 open={todoClassDialog}
+                maxWidth= 'lg'
                 onClose={() => setTodoClassDialog(false)}
                 TransitionComponent={Transition}
             >

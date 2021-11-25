@@ -14,7 +14,7 @@ import {
 } from "@material-ui/core";
 import { Add } from "@material-ui/icons";
 import { useLocalContext } from "../../context/context";
-import logo from "../../Assets/logo4.png";
+import logo from "../../Assets/logo.png";
 import { CreateClass, JoinClass, Todo } from "..";
 
 //this function handles the outlook of the header component of the page
@@ -52,7 +52,7 @@ const Header = ({ children }) => {
             {children}
             <img src={logo} alt="Microsoft" />
             <Typography variant="h6" className={classes.title}>
-              
+              Hub
             </Typography>
           </div>
           <div className={classes.header__wrapper__right}>

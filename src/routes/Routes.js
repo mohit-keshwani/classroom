@@ -18,6 +18,7 @@ export function IsUserRedirect({ user, loggedInPath, children, ...rest }) {
   );
 }
 
+//if the user is not loggedin, he will be redirected to the login page automaticallly
 export function ProtectedRoute({ user, children, ...rest }) {
   return (
     <Route
