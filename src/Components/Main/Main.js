@@ -60,7 +60,7 @@ const Main = ({ classData }) => {
                 {classData.className}
               </h1>
               <div className="main__section main__overflow">
-                {classData.section}
+                Section: {classData.section}
               </div>
               <div className="main__wrapper2">
                 <em className="main__code">Class Code :</em>

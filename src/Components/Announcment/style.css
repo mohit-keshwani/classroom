@@ -24,5 +24,6 @@
     width: 60px;
     object-fit: contain;
     margin-left: 10px;
+    cursor: pointer;
   }
   

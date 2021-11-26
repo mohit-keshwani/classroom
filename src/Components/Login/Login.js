@@ -8,6 +8,7 @@ import { Box, Button } from "@material-ui/core";
 import 'firebase/firestore'
 import { MicrosoftLoginButton, GoogleLoginButton, GithubLoginButton } from "react-social-login-buttons";
 import "./style.css";
+import hub from "../../Assets/hub.png";
 import $ from 'jquery';
 
 
@@ -64,9 +65,12 @@ const Login = () => {
       <div class="form-item log-in">
         <div class="table">
           <div class="table-cell">
+            <Box textAlign= 'center'>
+            <img src={hub} alt="Hub" height='200px' />
             <MicrosoftLoginButton onClick={() => loginMicrosoft()} size = "40px" />
             <GoogleLoginButton onClick={() => login()} size = "40px" />
             <GithubLoginButton onClick={() => loginGit()} size = "40px" />
+            </Box>
           </div>
         </div>
       </div>
@@ -74,6 +78,7 @@ const Login = () => {
         <div class="table">
           <div class="table-cell">
             <Box textAlign= 'center'>
+            <img src={hub} alt="Hub" height='200px' />
             <Button variant="contained" color= "primary" onClick={() => loginMicrosoft()}>
               Sign up with Microsoft
             </Button>

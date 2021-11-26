@@ -34,15 +34,15 @@
     background-color: #13011d;
   }
   .joined__image {
-    background-image: url(https://otus.com/wp-content/uploads/2020/09/5.png);
+    background-image: url("../../Assets/Outerbanner.png");
     height: 100%;
     left: 0;
     position: absolute;
     top: 0;
     width: 100%;
     background-repeat: no-repeat;
-    -webkit-background-size: contain;
-    background-size: contain;
+    -webkit-background-size: cover;
+    background-size: cover;
   }
   .joined__container {
     position: relative;
@@ -58,20 +58,21 @@
     position: relative;
   }
   .joined__title {
-    color: black;
+    color: white;
     font-family: "Roboto";
     text-decoration: none;
+    text-align: left;
     
   }
   .joined__title h2 {
-    font-weight: bold;
+    font-weight: 550;
   }
   .joined__title h2:hover {
     text-decoration: underline;
   }
   .joined__owner {
-    color: black;
-    font-weight: bold;
+    color: white;
+    font-weight: 550;
     font-size: 15px;
     text-align: left;
   }
@@ -84,7 +85,7 @@
     text-align: left;
   }
   .joined__bottom {
-    margin-top: 10%;
+    margin-top: 20%;
     display: flex;
     color: #5f6368;
     justify-content: flex-end;

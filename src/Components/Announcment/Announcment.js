@@ -38,9 +38,8 @@ const Announcment = ({ classData }) => {
               <div>{item.sender}</div>
             </div>
             <p className="amt__txt">{item.text}</p>
-            <Link to = {item.imageUrl}>
-               <img className="amt__img" src={PdfIcon} alt={item.text} />
-            </Link>
+              <img className="amt__img" src={PdfIcon} alt={item.text} onClick={()=> window.open(item.imageUrl, "_blank")} />
+
           </div>
         </div>
       ))}

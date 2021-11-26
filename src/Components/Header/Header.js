@@ -67,7 +67,7 @@ const Header = ({ children }) => {
             >
               <MenuItem onClick={handleJoin}>Join Class</MenuItem>
               <MenuItem onClick={handleCreate}>Create Class</MenuItem>
-              <MenuItem onClick={handletodo}> Todo </MenuItem>
+              <MenuItem onClick={handletodo}> To-Do </MenuItem>
             </Menu>
             <div>
               <Avatar
