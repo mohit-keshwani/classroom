@@ -7,7 +7,6 @@ import { Avatar } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
 import db from "../../lib/firebase";
 import "./style.css";
-import { Link } from "react-router-dom";
 import PdfIcon from "../../Assets/pdf-icon.png";
 
 //here classdata i.e the document is passed to the function to upload it on firebase
