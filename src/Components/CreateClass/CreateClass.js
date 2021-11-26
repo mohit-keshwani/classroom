@@ -35,21 +35,13 @@ const CreateClass = () => {
             </div>
             <DialogContent className='class__content'>
             <p className="class__text">
-                <p>If so, your school must sign up for a free</p>
-                <a href="/help" className="class__link">
-                  Microsoft for Education
-                </a>
-                account before you can use the Software
-                <a href="/learn" className="class__link2">
-                  Learn More.
-                </a>
+                <p>If so, your school must sign up for a free Microsoft for Education
+                account before you can use the Software.
               </p>
+            </p>
               <p>
                 Microsoft for Education lets schools decide which services
-                their students can use, and provides additional
-                <a href="/privacy" className="class__link2 class__link">
-                  privacy and security
-                </a>
+                their students can use, and provides additional privacy and security
                 protections that are important in a school setting. Students
                 cannot use this software at a school with personal accounts.
               </p>
@@ -66,7 +58,9 @@ const CreateClass = () => {
                    close
                 </Button>
 
-                <Button autoFocus color = 'primary' disabled={!check}
+                <Button autoFocus 
+                color = 'primary' 
+                disabled={!check}
                 onClick={() => setShowForm(true)}
                 >
                     Continue
