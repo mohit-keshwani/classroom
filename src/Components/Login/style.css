@@ -1,14 +1,13 @@
 @import url(https://fonts.googleapis.com/css?family=Oswald|Roboto);
 
 .bod {
-  background-color: white;
+  background-color: #5356ad;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   height: 70vh;
 }
-
 .table {
   display: table;
   width: 100%;

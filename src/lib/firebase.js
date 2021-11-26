@@ -4,14 +4,16 @@ import firebase from 'firebase'
 import 'firebase/firestore'
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBfmLbgHQ_0Fmt9pWB5oPb7OWEIGVMoYK0",
-    authDomain: "test-9696d.firebaseapp.com",
-    projectId: "test-9696d",
-    storageBucket: "test-9696d.appspot.com",
-    messagingSenderId: "362138856706",
-    appId: "1:362138856706:web:a36b54e37594c59cbb261b",
-    measurementId: "G-2CKBWE65VN"
-  };
+
+  apiKey: "AIzaSyCZs3-oZ4oQR4VQSwu7QYZ874MvgPVnH7s",
+  authDomain: "engage-a221a.firebaseapp.com",
+  projectId: "engage-a221a",
+  storageBucket: "engage-a221a.appspot.com",
+  messagingSenderId: "1074864973643",
+  appId: "1:1074864973643:web:690ca2aa265f25227caace"
+};
+
+
 
   firebase.initializeApp(firebaseConfig);
 
