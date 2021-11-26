@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Drawer, JoinedClasses, Login, Main } from "./components";
+import { Drawer, JoinedClasses, Login, Main } from "./Components";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { IsUserRedirect, ProtectedRoute } from "./routes/Routes";
 import { useLocalContext } from "./context/context";
